@@ -6,32 +6,40 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    background-color: gray;
+    background-color: #f0f4f8; /* Light background */
     color: #333;
 }
 
 /* Header Styling */
 header {
-    background-color: rgb(104, 101, 101);
+    background-color: #2c3e50; /* Dark blue */
     color: white;
     text-align: center;
     padding: 20px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
 }
 
 header h1 {
-    font-size: 2.5em;
+    font-size: 3em; /* Bigger heading */
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-/* Responsive Navigation Menu */
+header p {
+    font-size: 1.2em;
+    color: #bdc3c7; /* Light gray for subtitle */
+}
+
+/* Navigation Styling */
 header nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding: 0;
 }
 
 header nav ul li {
@@ -41,46 +49,67 @@ header nav ul li {
 header nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    background-color: #e74c3c; /* Red buttons */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 header nav ul li a:hover {
-    color: #ffcc00;
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 /* Main Content Styling */
 main {
-    padding: 20px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
+    margin-top: 20px;
 }
 
 /* Article Styling */
 article {
     background-color: white;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 article img {
     width: 100%;
     height: auto;
+    border-bottom: 4px solid #3498db; /* Blue border below image */
 }
 
-article h2, article p {
-    position: relative;
-    z-index: 1;
+article h2 {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-top: 15px;
 }
 
-/* Adjust full-width articles */
+article p {
+    font-size: 1.1em;
+    color: #7f8c8d; /* Muted text color */
+    margin: 10px 0;
+}
+
+/* Full Width Article */
 .full-width {
     grid-column: span 2;
 }
@@ -88,18 +117,24 @@ article h2, article p {
 /* Footer Styling */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #ff6f61;
+    padding: 20px 0;
+    background-color: #34495e; /* Darker background for footer */
     color: white;
+    position: relative;
+    bottom: 0;
     width: 100%;
+    margin-top: 40px;
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1.1em;
 }
 
 /* Media Queries for Responsiveness */
-
-/* Small devices (600px and down) */
 @media (max-width: 600px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     header nav ul {
@@ -113,35 +148,5 @@ footer {
 
     .full-width {
         grid-column: span 1;
-    }
-}
-
-/* Medium devices (600px to 900px) */
-@media (min-width: 601px) and (max-width: 900px) {
-    header h1 {
-        font-size: 2.3em;
-    }
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .full-width {
-        grid-column: span 2;
-    }
-}
-
-/* Large devices (901px and up) */
-@media (min-width: 901px) {
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .full-width {
-        grid-column: span 3;
     }
 }
