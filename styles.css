@@ -1,39 +1,83 @@
-/* Outdated CSS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #4a4a4a;
+    color: white;
     text-align: center;
+    padding: 20px 0;
 }
 
-h1 {
-    margin: 0;
-    text-align: center;
-    text-shadow: black;
-    text-emphasis-color: white;
+header h1 {
+    font-size: 2.5em;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
-li {
-    margin: 0;
-    padding: 0;
+header nav ul li {
+    margin: 0 15px;
 }
 
-p {
-    margin: 0;
-    padding: 0;
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-img {
+header nav ul li a:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+article {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+article img {
     width: 100%;
     height: auto;
 }
 
-table {
+.full-width {
+    grid-column: span 2; /* Makes the third article full-width */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4a4a4a;
+    color: white;
+    position: relative;
+    bottom: 0;
     width: 100%;
-    border-collapse: collapse;
 }
