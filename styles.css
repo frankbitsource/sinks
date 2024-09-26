@@ -1,4 +1,4 @@
-
+/* Modern CSS with Enhancements */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,15 +8,16 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f8f8f8;
+    background-color: #f0f8ff; /* Light blue background for brightness */
     color: #333;
 }
 
 header {
-    background-color: #4a4a4a;
+    background-color: #ff6f61; /* Bright coral color */
     color: white;
     text-align: center;
     padding: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text outline effect */
 }
 
 header h1 {
@@ -61,11 +62,29 @@ article {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    position: relative;
 }
 
 article img {
     width: 100%;
     height: auto;
+}
+
+article::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for sinks */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0; /* Behind the content */
+    border-radius: 8px;
+}
+
+article h2, article p {
+    position: relative;
+    z-index: 1; /* Above the background */
 }
 
 .full-width {
@@ -75,7 +94,7 @@ article img {
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #4a4a4a;
+    background-color: #ff6f61; /* Consistent footer color */
     color: white;
     position: relative;
     bottom: 0;
