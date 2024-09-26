@@ -1,3 +1,4 @@
+/* General Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,27 +8,30 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color:gray; 
+    background-color: gray;
     color: #333;
 }
 
+/* Header Styling */
 header {
     background-color: rgb(104, 101, 101);
     color: white;
     text-align: center;
     padding: 20px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text outline effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header h1 {
     font-size: 2.5em;
 }
 
+/* Responsive Navigation Menu */
 header nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 header nav ul li {
@@ -41,9 +45,10 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ffcc00; 
+    color: #ffcc00;
 }
 
+/* Main Content Styling */
 main {
     padding: 20px;
 }
@@ -54,6 +59,7 @@ main {
     gap: 20px;
 }
 
+/* Article Styling */
 article {
     background-color: white;
     border: 1px solid #ddd;
@@ -69,32 +75,73 @@ article img {
     height: auto;
 }
 
-article::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0; 
-    border-radius: 8px;
-}
-
 article h2, article p {
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
+/* Adjust full-width articles */
 .full-width {
-    grid-column: span 2; 
+    grid-column: span 2;
 }
 
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 10px 0;
-    background-color: #ff6f61; 
+    background-color: #ff6f61;
     color: white;
-    position: relative;
-    bottom: 0;
     width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small devices (600px and down) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+}
+
+/* Medium devices (600px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+    header h1 {
+        font-size: 2.3em;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .full-width {
+        grid-column: span 2;
+    }
+}
+
+/* Large devices (901px and up) */
+@media (min-width: 901px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .full-width {
+        grid-column: span 3;
+    }
 }
