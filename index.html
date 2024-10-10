@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinks R Us - HR Management Login</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <header>
-        <h1>Sinks R Us</h1>
-        <p>Your one-stop shop for all types of sinks</p>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Types of Sinks</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Contact Us</a></li>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Header Section -->
+    <header class="w-full bg-blue-900 text-white text-center py-6">
+        <h1 class="text-3xl md:text-4xl font-bold">Sinks R Us</h1>
+        <p class="text-sm md:text-base mt-2">Your one-stop shop for all types of sinks</p>
+        <nav class="mt-4">
+            <ul class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-6">
+                <li><a href="#" class="text-white hover:underline">Home</a></li>
+                <li><a href="#" class="text-white hover:underline">About Us</a></li>
+                <li><a href="#" class="text-white hover:underline">Types of Sinks</a></li>
+                <li><a href="#" class="text-white hover:underline">Features</a></li>
+                <li><a href="#" class="text-white hover:underline">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="w-full max-w-xs mx-auto">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="employee_list.html" method="GET">
+    <!-- Main Content Section -->
+    <main class="w-full flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-sm md:max-w-md bg-white p-8 rounded-lg shadow-md">
+            <form class="space-y-6" action="employee_list.html" method="GET">
                 <h1 class="text-2xl font-bold text-center mb-6">Login</h1>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                        Username
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" required>
+
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input id="username" name="username" type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Username">
                 </div>
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
-                        Password
-                    </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password" required>
+
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input id="password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Password">
                 </div>
+
                 <div class="flex items-center justify-between">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         Login
                     </button>
                 </div>
@@ -48,8 +53,10 @@
         </div>
     </main>
 
-    <footer>
+    <!-- Footer Section -->
+    <footer class="w-full bg-blue-900 text-white text-center py-4">
         <p>&copy; 2024 Sinks R Us - All Rights Reserved</p>
     </footer>
+
 </body>
 </html>
